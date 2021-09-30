@@ -27,7 +27,7 @@ async def start(bot, update):
             await update.reply_text(
                 text="<b>🔊 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹</b>",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=f"https://t.me/{MT_UPDATE}")]
+                    [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=f"https://t.me/{MT_CHANNEL}")]
               ])
             )
             return
@@ -57,14 +57,14 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    '🔔Join Main Channel🔔', url=f"https://t.me/{MT_CHANNEL}"
+                                    '🌈Channel', url=f"https://t.me/{MT_CHANNEL}"
                                 )
                         ],
                         [
                             InlineKeyboardButton
                                 (
-                                    '🤖 Bot Updates🤖', url=f"t.me/{MT_UPDATES}"
-                                )
+                                    '🌈GROUP', url=f"t.me/{MT_UPDATES}"
+                              
                         ]
                     ]
                 )
@@ -75,12 +75,12 @@ async def start(bot, update):
         return
 
     buttons = [[
-        InlineKeyboardButton('🗣️ Group', url=f'https://t.me/{MT_GROUP}'),
-        InlineKeyboardButton('📢 Channel', url =f'https://t.me/{MT_CHANNEL}')
+        InlineKeyboardButton('𝙂𝙍𝙊𝙐𝙋', url=f'https://t.me/{MT_GROUP}'),
+        InlineKeyboardButton('𝘾𝙃𝘼𝙉𝙉𝙀𝙇', url =f'https://t.me/{MT_CHANNEL}')
     ],[
-        InlineKeyboardButton('🤔Help', callback_data="help"),
-        InlineKeyboardButton('About😎', callback_data="about"),
-        InlineKeyboardButton('Close❌️', callback_data="close")
+        InlineKeyboardButton('💡𝙃𝙀𝙇𝙋', callback_data="help"),
+        InlineKeyboardButton('⚙️𝘼𝘽𝙊𝙐𝙏', callback_data="about"),
+        InlineKeyboardButton('𝘾𝙇𝙊𝙎𝙀🔒', callback_data="close")
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -98,14 +98,14 @@ async def start(bot, update):
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(bot, update):
     buttons = [[
-        InlineKeyboardButton('Support', url='t.me/Mo_Tech_Group'),
-        InlineKeyboardButton('Bot Updates', url=f't.me/{MT_UPDATES}')
+        InlineKeyboardButton('Support', url='t.me/Movie_hut_Group'),
+        InlineKeyboardButton('📝Updates', url=f't.me/{MT_CHANNEL}')
     ],[
-        InlineKeyboardButton('🖥️ How To Own This Bot 🖥️', url=f'{MT_LINK}')
+        InlineKeyboardButton('GROUP', url=f'{MT_GROUP}')
     ],[   
         InlineKeyboardButton('🏠Home', callback_data='start'),
-        InlineKeyboardButton('About😎', callback_data='about'),
-        InlineKeyboardButton('Close❌️', callback_data='close')
+        InlineKeyboardButton('About', callback_data='about'),
+        InlineKeyboardButton('Close🔒', callback_data='close')
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -124,7 +124,7 @@ async def about(bot, update):
     
     buttons = [[
         InlineKeyboardButton('🏠Home', callback_data='start'),
-        InlineKeyboardButton('Close❌️', callback_data='close')
+        InlineKeyboardButton('Close🔒', callback_data='close')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     
